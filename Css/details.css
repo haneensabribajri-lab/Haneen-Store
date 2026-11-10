@@ -1,0 +1,273 @@
+
+        /* إعدادات الأساسيات والأنماط العامة */
+        :root {
+            --bg-dark: #08121e;
+            --bg-card: #0c1a2b;
+            --gold-primary: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #f3e0aa 0%, #d4af37 50%, #aa7c11 100%);
+            --text-light: #ffffff;
+            --text-muted: #cfd8dc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(20, 50, 85, 0.5) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(15, 35, 60, 0.6) 0%, transparent 40%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- الهيدر / شريط التنقل --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .logo img {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+
+        /* --- القسم الرئيسي للمنتج --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex: 1;
+        }
+
+        /* حاوي صورة المنتج والقاعدة الذهبية */
+        .product-image-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            z-index: 2;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .product-image-container img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* القاعدة الكريستالية/الذهبية تحت المنتج */
+        .pedestal {
+            width: 250px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.05));
+            border: 1px solid var(--gold-primary);
+            transform: rotateX(60deg) rotateZ(45deg);
+            margin-top: -40px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            z-index: 1;
+        }
+
+        /* تفاصيل المنتج */
+        .product-details {
+            flex: 1.2;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-tag {
+            color: var(--gold-primary);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-top: 5px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .product-info-row {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .product-info-row span.label {
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .product-info-row span.value {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* زر الإضافة إلى السلة */
+        .add-to-cart-btn {
+            margin-top: 15px;
+            background: var(--gold-gradient);
+            color: #111;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            width: fit-content;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            filter: brightness(1.1);
+        }
+
+        /* --- الفوتر / أسفل الصفحة --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(5, 12, 20, 0.8);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-primary);
+            transition: all 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background: var(--gold-primary);
+            color: var(--bg-dark);
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-contact div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            color: var(--gold-primary);
+        }
+
+        /* --- تجاوب الشاشات (Responsive Design) --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .container {
+                flex-direction: column;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+            .product-description {
+                text-align: center;
+            }
+
+            .add-to-cart-btn {
+                width: 100%;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    
